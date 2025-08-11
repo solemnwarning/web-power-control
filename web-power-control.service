@@ -1,0 +1,10 @@
+[Unit]
+Description=Power control web frontend
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=plackup -E production -p 80 /opt/web-power-control/bin/app.psgi
+
+[Install]
+WantedBy=multi-user.target

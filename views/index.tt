@@ -1,0 +1,10 @@
+<h1>Power control for [% name | html %]</h1>
+
+System power status: <span id="power-status"></span>
+
+<button type="button" id="power-on" onclick="post('/power-on', 'Powering on');" disabled>Power on</button>
+<button type="button" id="soft-off" onclick="post('/soft-off', 'Requesting power off');" disabled>Power off (soft)</button>
+<button type="button" id="hard-off" onclick="post('/hard-off', 'Powering off');" disabled>Power off (hard)</button>
+<button type="button" id="reset" onclick="post('/reset', 'Resetting');" disabled>Reset</button>
+
+<ol id="events"></ol>

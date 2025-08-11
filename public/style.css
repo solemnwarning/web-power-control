@@ -1,0 +1,26 @@
+#content
+{
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#power-status > .on
+{
+	color: #008000;
+}
+
+#power-status > .off
+{
+	color: #FF0000;
+}
+
+button {
+	display: block;
+	margin-top: 0.5em;
+	min-width: 200px;
+}
+
+#events {
+	list-style-type: none;
+}

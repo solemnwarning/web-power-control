@@ -1,0 +1,36 @@
+# This is the main configuration file of your Dancer2 app
+# env-related settings should go to environments/$env.yml
+# all the settings in this file will be loaded at Dancer's startup.
+
+system-name: "System name here"
+
+## === ATX power control ===
+
+power-button-pin: 4          # Power button is on GPIO 7 / BCM 4 / Pin 7
+power-button-soft-time: 1.0  # Hold power button for 1 second for graceful power on/off
+power-button-hard-time: 5.0  # Hold power button for 5.0 seconds for hard power off
+power-button-active: "low"   # Power button is "pressed" when output is low
+
+reset-button-pin: 17         # Reset button GPIO 0 / BCM 17 / Pin 11
+reset-button-time: 0.5       # Hold reset button for 0.5 seconds when reset is requested
+reset-button-active: "low"   # Reset button is "pressed" when output is low
+
+power-status-pin: 18         # Machine power status is GPIO 1 / BCM 18 / Pin 12
+power-status-active: "high"  # Machine is powered on when input is high
+
+# === Basic configuration ===
+
+# Your application's name
+appname: "WebPowerControl"
+
+# The default layout to use for your application (located in
+# views/layouts/main.tt)
+layout: "main"
+
+# when the charset is set to UTF-8 Dancer2 will handle for you
+# all the magic of encoding and decoding. You should not care
+# about unicode within your app when this setting is set (recommended).
+charset: "UTF-8"
+
+# template engine
+template: "template_toolkit"
