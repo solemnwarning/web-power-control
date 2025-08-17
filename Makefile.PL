@@ -9,11 +9,11 @@ $eumm_version =~ s/_//;
 
 WriteMakefile(
     NAME                => 'WebPowerControl',
-    AUTHOR              => q{YOUR NAME <youremail@example.com>},
+    AUTHOR              => q{Daniel Collins <solemnwarning@solemnwarning.net>},
     VERSION_FROM        => 'lib/WebPowerControl.pm lib/WebPowerControl.pm',
-    ABSTRACT            => 'YOUR APPLICATION ABSTRACT',
+    ABSTRACT            => 'Remote power/reset control for ATX computers using a Raspberry Pi',
     ($eumm_version >= 6.3001
-      ? ('LICENSE'=> 'perl')
+      ? ('LICENSE'=> 'gpl_2')
       : ()),
     PL_FILES            => {},
     PREREQ_PM => {
