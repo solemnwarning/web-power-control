@@ -10,6 +10,7 @@ power-button-pin: 4          # Power button is on GPIO 7 / BCM 4 / Pin 7
 power-button-soft-time: 1.0  # Hold power button for 1 second for graceful power on/off
 power-button-hard-time: 5.0  # Hold power button for 5.0 seconds for hard power off
 power-button-active: "low"   # Power button is "pressed" when output is low
+power-on-max-wait: 10.0      # Wait up to 10 seconds for machine to power on
 
 reset-button-pin: 17         # Reset button GPIO 0 / BCM 17 / Pin 11
 reset-button-time: 0.5       # Hold reset button for 0.5 seconds when reset is requested

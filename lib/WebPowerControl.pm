@@ -1,5 +1,5 @@
 # WebPowerControl
-# Copyright (C) 2025 Daniel Collins <solemnwarning@solemnwarning.net>
+# Copyright (C) 2025-2026 Daniel Collins <solemnwarning@solemnwarning.net>
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License version 2 as published by
@@ -54,6 +54,13 @@ post "/power-on" => sub
 		$power_button_pin->write(1);
 		Time::HiRes::sleep(config->{"power-button-soft-time"});
 		$power_button_pin->write(0);
+		
+		my $power_on_timeout = Time::HiRes::time() + config->{"power-on-max-wait"};
+		
+		while(!($power_status_pin->read()) && Time::HiRes::time() < $power_on_timeout)
+		{
+			Time::HiRes::sleep(0.1); # Avoid spin loop
+		}
 		
 		if($power_status_pin->read())
 		{
