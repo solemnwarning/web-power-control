@@ -103,7 +103,8 @@ sub read_events
 	
 	MESSAGE: while(IO::Select->new($self->{rpipe})->can_read(0))
 	{
-		my ($buf, $len);
+		my $buf;
+		my $len = 0;
 		
 		while($len < 9)
 		{
